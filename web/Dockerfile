@@ -5,8 +5,8 @@ FROM node:22-alpine AS builder
 WORKDIR /build
 COPY . .
 
-ENV NEXT_PUBLIC_ENTE_ENDPOINT=ENTE_API_ORIGIN_PLACEHOLDER
-ENV NEXT_PUBLIC_ENTE_ALBUMS_ENDPOINT=ENTE_ALBUMS_ORIGIN_PLACEHOLDER
+ENV NEXT_PUBLIC_ENTE_ENDPOINT=https://ente.pepperstech.net
+ENV NEXT_PUBLIC_ENTE_ALBUMS_ENDPOINT=https://albums.pepperstech.net
 
 # `yarn install` is flaky on the GitHub arm64 runners otherwise.
 RUN yarn config set network-timeout 900000 -g
